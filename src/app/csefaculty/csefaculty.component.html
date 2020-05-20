@@ -1,0 +1,214 @@
+<div id="body">
+  <div id="blank">
+  </div>
+    <div id="headerblank">
+      <div id="header">
+      <div id="logotitlesocial">
+        <div id="logotitle">
+          <div id="logo">
+            <img src="../../assets/Images/logo.png" width="100%" height="140px"/>
+          </div>
+          <div id="title">
+            <h1 id="titlename">GATE Achievers</h1>
+          </div>
+        </div>
+        <div id="logout">
+          welcome {{LoginID}} &nbsp;&nbsp;&nbsp;
+          <a href="logout" active >Logout</a>
+        </div>
+        <div id="social">
+          <div id="fb">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" style="font-size:35px;color:blue"></i></a>
+          </div>
+          <div id="twit">	
+            <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter" style="font-size:35px;color:powderblue"></i></a>
+          </div>
+          <div id="g">	
+            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus-circle" style="font-size:35px;color:red"></i></a>
+          </div>
+          <div id="yt">
+            <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play" style="font-size:35px;color:red"></i></a>
+          </div>
+          <div id="ln">
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" style="font-size:35px;color:blue"></i></a>
+          </div>
+        </div>
+      </div>
+      <div id="navmenu">
+          <div id="menu">
+            <ul id="list">
+                <li><a href="dashboard">Home</a></li>
+                <li><a href="../../assets/Images/syllabus.pdf" target="_blank">Syllabus</a>
+                </li>
+              <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Gallery</a>
+                  <div class="dropdown-content">
+                      <a href="bookspdf" target="_blank">Books PDF</a>
+                      <a href="videos" target="_blank">Videos</a>
+                   <a href="../assets/pdf/oldpaper.pdf" target="_blank">Assignments</a>
+                  </div>
+                </li>
+              <li><a href="news" target="_blank">News</a></li>
+              <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">Contact</a>
+                  <div class="dropdown-content">
+                      <a href="csefaculty" target="_blank">CSE Faculty</a>
+                      <a href="adminstration" target="_blank">Administration</a>
+                      <a href="#" target="_blank">H.O.D.'s</a>
+                   <a href="#" target="_blank">Departments</a>
+                  </div>
+                </li>
+              <li><a href="about" target="_blank">Feedback</a></li>
+            </ul>
+          </div>
+          <form action="https://www.google.com/" method="post">
+          <div id="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <div id="btnsearch">
+              <button type="submit" style="font-size:24px;color:red" ><i class="material-icons">search</i></button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+      </div>
+    <div id="slideshowblank">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="../../assets/Images/img1.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/Images/img2.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/Images/img3.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/Images/img4.jpg" alt="Fourth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="../../assets/Images/img5.jpg" alt="Fifth slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div id="mainblank">
+      <div id="maincontent">
+        <div id="content">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+          <tr>
+            <th>Sr No.</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Make_Action</th>
+          </tr>
+          </thead>
+          <tr *ngFor="let user of record.data ; let i=index" style="text-align:center;">
+            <td>{{i+1}}</td>
+            <td>{{user.LoginID}}</td>
+            <td>{{user.fname +" "+ user.lname}}</td>
+            <td>{{user.phnnum}}</td>
+            <td>
+            <button class="label label-primary" (click)="edit_user(user.LoginID)"><i class="fa fa-edit"></i>S</button>
+            <button class="label label-danger" (click)="deleteuser(user.LoginID)"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </table>
+        <a [routerLink]="['/dashboard']">Back to Dashboard</a>
+        <span style="color:green" *ngIf="isDelete">{{delconfirmation}}</span>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="f">
+      <div id="Address">
+        <div id="center">
+          Address
+        </div>
+        <div id="fcontent">
+          Guru Jambheshwar University of Science & Technology , Hisar , <br>
+          Haryana , INDIA <br>
+          Pin code: 125001
+        </div>
+      </div>
+      <div id="fblank"></div>
+      <div id="contactnum">
+          <div id="center">
+              Contact us
+          </div>
+            <div id="fcontent">
+                Mob No: ( +91 8684098247 ,<br>
+                +91 8708927014 ,
+                +91 9813525048 ,
+                +91 7056952278 )
+            </div>
+      </div>
+      <div id="fblank"></div>
+      <div id="email">
+          <div id="center">
+              E-mail us
+          </div>
+            <div id="fcontent">
+               pankajmittal0321@gmail.com ,<br>
+                yadavravisachin@gmail.com , ns094953@gmail.com , maillokeshyadav1213@gmail.com
+            </div>
+      </div>
+      <div id="quote">
+          <div class="w3-panel w3-leftbar w3-light-powderblue w3-rightbar">
+              <p class="w3-xlarge w3-serif">
+                  &#10077;&nbsp; &nbsp; &nbsp;&nbsp;<i>"Make it as simple as possible, but not simpler."</i>&nbsp; &nbsp; &nbsp; &nbsp;&#10078;</p>
+              <p>Albert Einstein</p>
+            </div>
+      </div>
+      </div>
+      <div id="f2">
+        <div id="followsocial">
+        <h4>Follow us on </h4>
+        <div id="social">
+          <div id="fb">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" style="font-size:35px;color:blue"></i></a>
+          </div>
+          <div id="twit">	
+            <a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter" style="font-size:35px;color:powderblue"></i></a>
+          </div>
+          <div id="g">	
+            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus-circle" style="font-size:35px;color:red"></i></a>
+          </div>
+          <div id="yt">
+            <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube-play" style="font-size:35px;color:red"></i></a>
+          </div>
+          <div id="ln">
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" style="font-size:35px;color:blue"></i></a>
+          </div>
+        </div>
+      </div>
+      <div id="fhblank"></div>
+      <div id="address">
+        <h4>Location</h4>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.7984277064656!2d75.73109161518781!3d29.17061168220869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912333b75d2db1d%3A0xd3d27cd450e433e3!2sGuru+Jambheshwar+University+of+Science+and+Technology!5e0!3m2!1sen!2sin!4v1532951537671"
+           width="90%" height="120px" frameborder="0" style="border:0;margin-left:15px;" allowfullscreen></iframe>
+      </div>
+      </div>
+    </div>
+  <div id="copyright">
+    Copyright <i class="fa fa-copyright"></i> GATE Achievers 2018
+  </div>
+  </div>

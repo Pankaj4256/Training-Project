@@ -8,7 +8,7 @@ import { CurdService } from './../curd.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor( private curd:CurdService) { }
+  constructor( private curd:CurdService ) { }
     registrationdata:any;
     fname:any;
     lname:any;
@@ -19,33 +19,41 @@ export class RegisterComponent implements OnInit {
     address:any;
     gender:any;
     response:any;
+    errorRegister:any;
     confirmation:any;
   
     registration(){
-      this.registrationdata ={
-      "fname":this.fname,
-      "lname":this.lname,
-      "LoginID":this.LoginID,
-      "Password":this.Password,
-      "repass":this.repass,
-      "phnnum":this.phnnum,
-      "address":this.address,
-      "gender":this.gender
+      if(this.repass == this.Password){
+        this.errorRegister=false;
+        this.registrationdata ={
+          "fname":this.fname,
+          "lname":this.lname,
+          "LoginID":this.LoginID,
+          "Password":this.Password,
+          "repass":this.repass,
+          "phnnum":this.phnnum,
+          "address":this.address,
+          "gender":this.gender
+          }
+    
+          this.curd.insertData(this.registrationdata)
+          .subscribe(registrationdata =>{
+            this.response =registrationdata;
+            this.confirmation ="Registration Successful.";
+            this.fname="";
+            this.lname="";
+            this.LoginID="";
+            this.Password="";
+            this.repass="";
+            this.phnnum="";
+            this.address="";
+            this.gender="";
+          });
       }
-
-      this.curd.insertData(this.registrationdata)
-      .subscribe(registrationdata =>{
-        this.response =registrationdata;
-        this.confirmation ="Registration Successful.";
-        this.fname="";
-        this.lname="";
-        this.LoginID="";
-        this.Password="";
-        this.repass="";
-        this.phnnum="";
-        this.address="";
-        this.gender="";
-      });
+      else{
+        this.errorRegister=true;
+        this.confirmation="Retype password do not match to Password.";
+      }
   }
   ngOnInit() {
   }
