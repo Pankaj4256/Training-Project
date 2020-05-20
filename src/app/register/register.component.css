@@ -1,0 +1,119 @@
+#blank{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:100%;
+    float:left;
+    background:linear-gradient( to left,#ffffff,#999999 );
+    }
+#registerblank{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:1000px;
+    float:left;
+    }
+#registercontent{
+    margin:0 auto;
+    margin-top:50px;
+    width:800px;
+    height:800px;
+    }
+#registerhead{
+    margin:0 auto;
+    margin-top:10px;
+    text-align:center;
+    width:100%;
+    float:left;
+    height:100px;
+    margin-bottom:20px;
+    }
+#registerhead h1{
+    color: red;
+    text-align:center;
+    }
+#formcontent{
+    margin:0px;
+    padding:0px;
+    margin:0 auto;
+    width:750px;
+    height:800px;
+    }
+#formelements{
+    margin:0 auto;
+    width:600px;
+    height:800px;
+    color:white;
+    font-weight:bold;
+    font-size:16px;
+    }
+#formelements input[type="text"]{
+    margin-left:100px;
+    margin-top:15px;
+    margin-bottom:5px;
+    width:400px;
+    line-height:35px;
+    border:none;
+    border-radius:10px;
+    padding-left:25px;
+    background:none;
+    outline: none;
+    border-bottom:2px solid #666666;
+    }
+::placeholder{
+    color:white;
+    padding:20px;
+    }
+#formelements input[type="password"]{
+    margin-left:100px;
+    margin-top:15px;
+    outline: none;
+    margin-bottom:5px;
+    width:400px;
+    line-height:35px;
+    border:none;
+    border-radius:10px;
+    padding-left:25px;
+    background:none;
+    border-bottom:2px solid #666666;
+    }
+#formelements input[type="radio"]{
+    margin-left:110px;
+    margin-top:20px;
+    }
+#formelements input[type="checkbox"]{
+    margin-left:110px;
+    margin-top:20px;
+    }
+#formelements input[type="submit"]{
+    margin-left:200px;
+    width:200px;
+    height:40px;
+    border:none;
+    border-radius:15px;
+    background-color:#009900;
+    margin-top:20px;
+    color:white;
+    outline:none;
+    }
+#formelements input[type="submit"]:hover{
+    background-color: green;
+    }
+#formelements input[type="reset"]{
+    margin-left:200px;
+    width:200px;
+    color:white;
+    border-style:none;
+    background-color:#CC0033;
+    border-radius:15px;
+    height:40px;
+    outline:none;
+    margin-top:20px;
+    }
+#formelements input[type="reset"]:hover{
+    background-color: red;
+    }
+#formelements h3{
+    color:#333333;
+    font-size: 18px;
+    }

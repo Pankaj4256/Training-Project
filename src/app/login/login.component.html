@@ -1,0 +1,15 @@
+<div id="oblank">
+<div id="outer">
+<form id="form" (ngSubmit)="login()" method="post">
+<h1 style="color:crimson; text-align:center" > <b>SIGN IN </b></h1>
+<p id="p">Authorized members Login here.</p>
+<input name="LoginID" type="text" placeholder="Username" required [(ngModel)]="LoginID"><br>
+<input name="Password" type="password" placeholder="Password" required [(ngModel)]="Password"><br><br>
+<button style="width:300px;" type="submit" class="btn btn-success">Login</button><br><br>
+<a style="float:left;" href="#" >Forget Password !</a>
+<a style="float:right;" href="register"> Register Here</a>
+{{confirmation}}
+</form>
+</div>
+</div>
+

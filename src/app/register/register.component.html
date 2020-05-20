@@ -1,0 +1,31 @@
+<div id="blank">
+<div id="registerblank">
+	<div id="registercontent">
+		<div id="registerhead">
+			<h1>GATE Achievers</h1>
+			Register here to become authorized memeber of the organisation
+		</div>
+		<hr>
+		<form id="formcontent" (ngSubmit)="registration()" method="post">
+			<div id="formelements">
+				<input type="text" name="fname" placeholder="First Name" [(ngModel)]="fname" required><br>
+				<input type="text" name="lname" placeholder="Last Name" [(ngModel)]="lname" required><br>
+				<input type="text" name="LoginID" placeholder="LoginID" [(ngModel)]="LoginID" required><br>
+				<input type="password" name="Password" placeholder="Password" [(ngModel)]="Password" required><br>
+				<input type="password" name="repass" placeholder="Retype Password" [(ngModel)]="repass" required><br>
+				<input type="text" name="phnnum" placeholder="Mobile No." [(ngModel)]="phnnum" required><br>
+				<input type="text" name="address" placeholder="Address" [(ngModel)]="address" required><br>
+				<input type="radio" name="gender" value="M" [(ngModel)]="gender" required> Male 
+				<input type="radio" name="gender" value="F" [(ngModel)]="gender" required> Female<br>
+				<input type="checkbox" name="t_c" value="tc" [(ngModel)]="t_c" required> I agree all Terms & Conditions.<br><br>
+				<h3>Terms & Conditions:</h3>
+				Agree to our Terms & Conditions <a href="terms & conditions.html" target="_blank">Terms of Services</a> , To our End user Liscene Agreement.
+				<br><input type="submit" *ngIf="t_c" name="submit" value="Register">
+				<input type="submit" *ngIf="!t_c" name="submit" value="Register" disabled><br>
+				{{confirmation}}
+				<input type="reset" name="reset" value="Reset"><br>
+			<hr></div>
+		</form>
+	</div>
+</div>
+</div>
